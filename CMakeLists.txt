@@ -22,7 +22,7 @@ install(
 # Install Targets (Binaries)
 install(TARGETS
   __template__
-  EXPORT serial_communication_targets
+  EXPORT __template___targets
   LIBRARY DESTINATION ${config_relative_output_dir}/bin
   RUNTIME DESTINATION ${config_relative_output_dir}/bin
   ARCHIVE DESTINATION ${config_relative_output_dir}/lib
@@ -31,7 +31,7 @@ install(TARGETS
 
 # Install CMAKE Configuration Files
 install(
-  EXPORT serial_communication_targets
+  EXPORT __template___targets
   NAMESPACE example
   DESTINATION "${config_relative_output_dir}/cmake"
   )
