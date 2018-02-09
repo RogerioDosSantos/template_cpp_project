@@ -3,12 +3,12 @@ cmake_minimum_required(VERSION 3.0)
 include(CMakePackageConfigHelpers)
 include(GenerateExportHeader)
 
-project(serial_communication VERSION 1.0.0)
+project(__template__ VERSION 1.0.0)
 
 include("${config_file_path}")
 
 # Executable
-add_executable(serial_communication
+add_executable(__template__
   ./src/main.cpp
   )
 
@@ -21,7 +21,7 @@ install(
 
 # Install Targets (Binaries)
 install(TARGETS
-  serial_communication
+  __template__
   EXPORT serial_communication_targets
   LIBRARY DESTINATION ${config_relative_output_dir}/bin
   RUNTIME DESTINATION ${config_relative_output_dir}/bin
