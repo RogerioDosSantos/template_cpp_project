@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build configuration
-config_file_path="./linux_default.cmake"
+config_file_path=$(realpath $1)
 
 # Exit on any non-zero status.
 trap 'exit' ERR
@@ -28,7 +28,7 @@ echo "B - Build Directory: ${build_dir}"
 echo " "
 echo "*** Staging:" 
 # cmake ../../../.. 
-cmake ../.. -DCMAKE_INSTALL_PREFIX=${bash_dir}/../stage/ -Dconfig_file_path=${bash_dir}/${config_file_path}
+cmake ../.. -DCMAKE_INSTALL_PREFIX=${bash_dir}/../stage/ -Dconfig_file_path=${config_file_path}
 
 echo " "
 echo "*** Compiling:" 
